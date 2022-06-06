@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.css";
-import { TextArea, Input, CompleteBtn } from "./Edit.js";
+import { TextArea, Input, CompleteBtn } from "./Edit";
+import useState from "./useCompletes.js";
 
 function App() {
   // input 태그에 찍히는 값을 관리하기 위해 부모 컴포넌트에서 작업함
-  const [text, setText] = React.useState("");
+  const [text, setText] = useCompletes("");
   const input_ref = React.useRef(null);
   return (
     <div className="App" style={{ display: "flex", gap: 10 }}>

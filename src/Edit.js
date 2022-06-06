@@ -13,8 +13,7 @@ export const CompleteBtn = ({ input_ref, setText }) => {
   return (
     <button
       onClick={() => {
-        setText(input_ref.current.value);
-        input_ref.current.value = "";
+        setText(input_ref);
       }}
     >
       완성
