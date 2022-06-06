@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { TextArea, Input, CompleteBtn } from "./Edit.js";
 
 function App() {
+  // input 태그에 찍히는 값을 관리하기 위해 부모 컴포넌트에서 작업함
+  const [text, setText] = React.useState("");
+  const input_ref = React.useRef(null);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ display: "flex", gap: 10 }}>
+      <div>
+        <TextArea text={text} />
+      </div>
+      <div>
+        <Input input_ref={input_ref} />
+        <CompleteBtn setText={setText} input_ref={input_ref} />
+      </div>
     </div>
   );
 }
